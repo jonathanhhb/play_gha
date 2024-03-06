@@ -10,7 +10,7 @@ setup(
     setup_requires=[
         'wheel',
         # Other dependencies
-    ]
+    ],
     install_requires=[
         'wheel',
         # Other dependencies
