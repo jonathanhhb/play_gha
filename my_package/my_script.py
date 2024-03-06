@@ -1,5 +1,6 @@
 import ctypes
 import os
+import platform
 
 package_dir = os.path.dirname(__file__)
 
@@ -8,14 +9,17 @@ package_dir = os.path.dirname(__file__)
 if platform.system() == 'Windows':
     library_ext = '.dll'
 elif platform.system() == 'Linux':
-    library_ext = '.so'
+    library_ext = 'cpython-310-x86_64-linux-gnu.so'
 elif platform.system() == 'Darwin':  # macOS
     library_ext = '.dylib'
 else:
     raise RuntimeError("Unsupported platform")
 
+# Construct the full filename for the shared library
+library_filename = f"my_extension.{library_ext}"
+
 # Construct the path to the shared library file
-library_path = os.path.join(script_dir, f'my_extension{library_ext}')
+library_path = os.path.join(package_dir, f'{library_filename}')
 
 #library_path = os.path.join(package_dir,'my_extension.cpython-310-x86_64-linux-gnu.so')
 
