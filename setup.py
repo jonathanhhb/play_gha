@@ -7,5 +7,9 @@ setup(
     ext_modules=[
         Extension('my_package.my_extension', ['my_extension.c']),
     ],
+    install_requires=[
+        'wheel',
+        # Other dependencies
+    ],
 )
 
