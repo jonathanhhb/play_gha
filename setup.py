@@ -1,11 +1,11 @@
 from setuptools import setup, Extension
 
 setup(
-    name='my_package',
+    name='jhhb_bdist_test',
     version='1.0',
-    packages=['my_package'],
+    packages=['jhhb_bdist_test'],
     ext_modules=[
-        Extension('my_package.my_extension', ['my_extension.c']),
+        Extension('jhhb_bdist_test.my_extension', ['my_extension.c']),
     ],
     setup_requires=[
         'wheel',
