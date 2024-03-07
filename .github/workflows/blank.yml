@@ -44,6 +44,7 @@ jobs:
           TWINE_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
         run: |
+          pip3 install twine
           twine upload dist/*
 
       - name: Runner debug mode
