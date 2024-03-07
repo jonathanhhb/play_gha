@@ -38,6 +38,14 @@ jobs:
           name: wheel-linux
           path: dist/*.whl
 
+      - name: Build and publish
+        env:
+          TWINE_REPOSITORY_URL: https://packages.idmod.org/api/pypi/idm-pypi-production/
+          TWINE_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+        run: |
+          twine upload dist/*
+
       - name: Runner debug mode
         if: always()
         run: |
