@@ -13,6 +13,7 @@ setup(
     ],
     install_requires=[
         'wheel',
+        'twine',
         # Other dependencies
     ],
 )
