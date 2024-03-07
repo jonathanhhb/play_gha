@@ -38,6 +38,12 @@ jobs:
           name: wheel-linux
           path: dist/*.whl
 
+      - name: Runner debug mode
+        if: always()
+        run: |
+          echo "Runner debug mode"
+          bash
+
   build_windows:
     runs-on: windows-latest
     steps:
